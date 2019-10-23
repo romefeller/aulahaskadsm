@@ -10,4 +10,21 @@ import Import
 import Database.Persist.Postgresql
 
 getHomeR :: Handler Html
-getHomeR = undefined
+getHomeR = do 
+    defaultLayout $ do 
+        toWidgetHead [julius|
+            function ola() {
+                alert("OI");
+            }
+        |]
+        toWidgetHead [cassius|
+            h1 
+                color : blue;
+        |] 
+        [whamlet|
+            <h1>
+                OI MUNDO!
+            
+            <button>
+                OK!
+        |]
