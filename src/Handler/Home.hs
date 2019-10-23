@@ -26,6 +26,6 @@ getHomeR = do
             <h1>
                 OI MUNDO!
             
-            <button>
+            <button onclick="ola()">
                 OK!
         |]
