@@ -13,9 +13,6 @@ import Database.Persist.Postgresql
 getHomeR :: Handler Html
 getHomeR = do 
     defaultLayout $ do 
-        getHomeR :: Handler Html
-getHomeR = do 
-    defaultLayout $ do 
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead [julius|
             function ola(){
