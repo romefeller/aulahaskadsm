@@ -38,10 +38,21 @@ getHomeR = do
             h1 {
                 color : red;
             }
+            ul{
+                display: inline;
+            }
         |]
         [whamlet|
             <h1>
                 OLA MUNDO!
+            
+            <ul>
+                <li>
+                    <a href=@{Page1R}>
+                        Pagina 1
+                <li>
+                    <a href=@{Page2R}>
+                        Pagina 2
             
             <img src=@{StaticR pikachu_jpg}>
             
