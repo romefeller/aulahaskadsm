@@ -38,8 +38,9 @@ getHomeR = do
             h1 {
                 color : red;
             }
-            ul{
+            li{
                 display: inline;
+                list-style: none;
             }
         |]
         [whamlet|
