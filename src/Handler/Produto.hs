@@ -34,6 +34,7 @@ getProdutoR = do
                 
             <form method=post action=@{ProdutoR}>
                 ^{widget}
+                <input type="submit" value="Cadastrar">
         |]
 
 postProdutoR :: Handler Html
