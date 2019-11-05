@@ -21,8 +21,8 @@ formProduto = renderBootstrap $ Produto
 
 getProdutoR :: Handler Html
 getProdutoR = do 
+    (widget,enctype) <- generateFormPost formProduto 
     defaultLayout $ do 
-        (widget,enctype) <- generateFormPost formProduto 
         msg <- getMessage
         [whamlet|
             <div>
