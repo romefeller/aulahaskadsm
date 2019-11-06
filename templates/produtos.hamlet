@@ -13,7 +13,7 @@
                 <td>
                     #{produtoNome produto}
                 <td>
-                    #{produtoPreco produto}
+                    #{produtoValor produto}
                 <td>
                     <form method=post action=@{ApagarProdR pid}>
                         <input type="submit" value="X">
