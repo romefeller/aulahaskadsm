@@ -10,3 +10,5 @@
 /produto ProdutoR GET POST
 /listar  ListProdR GET
 /produto/#ProdutoId/apagar ApagarProdR POST
+
+/cadastro UsuarioR GET POST
