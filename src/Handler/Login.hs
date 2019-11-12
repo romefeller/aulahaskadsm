@@ -18,7 +18,7 @@ formLogin = renderBootstrap $ (,)
     <*> areq passwordField "Senha: " Nothing
     
 getLoginR :: Handler Html
-getloginR = do 
+getLoginR = do 
     (widget,enctype) <- generateFormPost formLogin
     defaultLayout $ do 
         msg <- getMessage
@@ -35,8 +35,8 @@ getloginR = do
                 <input type="submit" value="Entrar">
         |]
 
-postUsuarioR :: Handler Html
-postUsuarioR = do 
+postLoginR :: Handler Html
+postLoginR = do 
     ((result,_),_) <- runFormPost formLogin
     case result of 
         FormSuccess (email,senha) -> do 
