@@ -48,7 +48,7 @@ postLoginR = do
                             E-mail nao encontrado!
                     |]
                     redirect LoginR
-                Just (_, usr) -> do
+                Just (Entity _ usr) -> do
                     if (usuarioSenha usr == senha) then do 
                         setSession "_NOME" (usuarioNome usr)
                         redirect HomeR
