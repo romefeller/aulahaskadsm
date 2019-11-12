@@ -28,6 +28,7 @@ getPage1R = do
 getHomeR :: Handler Html
 getHomeR = do 
     defaultLayout $ do 
+        sess <- lookupSession "_NOME"
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead [julius|
             function ola(){
@@ -54,8 +55,14 @@ getHomeR = do
                 <li>
                     <a href=@{Page2R}>
                         Pagina 2
-            
-            <img src=@{StaticR pikachu_jpg}>
+                $maybe nomeSess <- sess
+                    <li>
+                        <form method=post action=@{LogoutR}>
+                            <input type="sumbit" value="Sair">
+                    <div>
+                        Ola #{nomeSess}
+                $nothing
+                    <img src=@{StaticR pikachu_jpg}>
             
             <button class="btn btn-danger" onclick="ola()">
                 OLA
