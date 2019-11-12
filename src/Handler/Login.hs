@@ -40,7 +40,7 @@ postLoginR = do
     ((result,_),_) <- runFormPost formLogin
     case result of 
         FormSuccess (email,senha) -> do 
-            usuario <- runDB $ getBy (Unique email)
+            usuario <- runDB $ getBy (UniqueEmailAdm email)
             case usuario of 
                 Nothing -> do 
                     setMessage [shamlet| 
