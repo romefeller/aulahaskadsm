@@ -58,7 +58,7 @@ getHomeR = do
                 $maybe nomeSess <- sess
                     <li>
                         <form method=post action=@{LogoutR}>
-                            <input type="sumbit" value="Sair">
+                            <input type="submit" value="Sair">
                     <div>
                         Ola #{nomeSess}
                 $nothing
