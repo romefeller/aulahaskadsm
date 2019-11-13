@@ -29,7 +29,16 @@ instance Yesod App where
     isAuthorized UsuarioR _ = return Authorized
     isAuthorized LoginR _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized
+    isAuthorized AdminR _ = isRoot
     isAuthorized _ _ = isUsuario
+
+isRoot :: Handler AuthResult
+isRoot = do 
+    sess <- lookupSession "_NOME"
+    case sess of 
+        Nothing -> return AuthenticationRequired
+        Just "Root" -> return Authorized
+        Just _ -> return (Unauthorized "VC N EH ADMIN")
 
 isUsuario :: Handler AuthResult
 isUsuario = do 
